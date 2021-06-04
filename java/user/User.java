@@ -7,43 +7,46 @@ public class User {
     private String userGender;
     private String userEmail;
 
-    public String getUserID() {
-        return userID;
-    }
 
-    public void setUserID(String userID) {
-        this.userID = userID;
-    }
+	public String getUserID() {
+		return this.userID;
+	}
 
-    public String getUserPassword() {
-        return userPassword;
-    }
+	public void setUserID(String userID) {
+		this.userID = userID;
+	}
 
-    public void setUserPassword(String userPassword) {
-        this.userPassword = userPassword;
-    }
+	public String getUserPassword() {
+		return this.userPassword;
+	}
 
-    public String getUserName() {
-        return userName;
-    }
+	public void setUserPassword(String userPassword) {
+		this.userPassword = userPassword;
+	}
 
-    public void setUserName(String userName) {
-        this.userName = userName;
-    }
+	public String getUserName() {
+		return this.userName;
+	}
 
-    public String getUserGender() {
-        return userGender;
-    }
+	public void setUserName(String userName) {
+		this.userName = userName;
+	}
 
-    public void setUserGender(String userGdner) {
-        this.userGender = userGender;
-    }
+	public String getUserGender() {
+		return this.userGender;
+	}
 
-    public String getUserEmail() {
-        return userEmail;
-    }
+	public void setUserGender(String userGender) {
+		this.userGender = userGender;
+	}
 
-    public void setUserEmail(String userEmail) {
-        this.userEmail = userEmail;
-    }
+	public String getUserEmail() {
+		return this.userEmail;
+	}
+
+	public void setUserEmail(String userEmail) {
+		this.userEmail = userEmail;
+	}
+
+    
 }
