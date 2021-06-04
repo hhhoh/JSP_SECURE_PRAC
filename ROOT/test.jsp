@@ -12,7 +12,7 @@
         <%
         try {
             String oradriver = "oracle.jdbc.driver.OracleDriver";
-            String dbURL = "jdbc:oracle:thin:@localhost:1521:XE";
+            String dbURL = "jdbc:oracle:thin:@localhost:1521:xe";
             Class.forName(oradriver);
             Connection conn = DriverManager.getConnection(dbURL, "hhhoh", "oracle");
             out.println("OracleDB Connect Success");
