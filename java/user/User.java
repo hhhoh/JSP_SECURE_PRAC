@@ -6,7 +6,10 @@ public class User {
     private String userName;
     private String userGender;
     private String userEmail;
-
+	private String userAddress;
+	private String userPostcode;
+	private String userDetailAddress;
+	private String userExtraAddress;
 
 	public String getUserID() {
 		return this.userID;
@@ -47,6 +50,41 @@ public class User {
 	public void setUserEmail(String userEmail) {
 		this.userEmail = userEmail;
 	}
+
+	public String getUserAddress() {
+		return this.userAddress;
+	}
+
+	public void setUserAddress(String userAddress) {
+		this.userAddress = userAddress;
+	}
+
+	public String getUserPostcode() {
+		return this.userPostcode;
+	}
+
+	public void setUserPostcode(String userPostcode) {
+		this.userPostcode = userPostcode;
+	}
+
+	public String getUserDetailAddress() {
+		return this.userDetailAddress;
+	}
+
+	public void setUserDetailAddress(String userDetailAddress) {
+		this.userDetailAddress = userDetailAddress;
+	}
+
+	public String getUserExtraAddress() {
+		return this.userExtraAddress;
+	}
+
+	public void setUserExtraAddress(String userExtraAddress) {
+		this.userExtraAddress = userExtraAddress;
+	}
+
+
+	
 
     
 }
