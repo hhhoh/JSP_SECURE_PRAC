@@ -19,30 +19,25 @@
             UserDAO userDAO = new UserDAO();
             String userID = user.getUserID();
             String userPW = user.getUserPassword();
-            String sql = "select * from user_info where userID='"+userID+"' and userPassword='"+userPW+"'";
             int result = userDAO.login(userID, userPW);
             PrintWriter script = response.getWriter();
-            script.println(sql);
             if(result == 1) {
-
                 script.println("<script>");
                 script.println("alert('로그인 성공')");
+                session.setAttribute("id", userID);
                 script.println("location.href='main.jsp'");
                 script.println("</script>");
             } else if(result == 0){
-
 			    script.println("<script>");
 			    script.println("alert('비밀번호가 틀립니다')");
 			    script.println("history.back()");
 			    script.println("</script>");
 		    }else if(result == -1){
-
 			    script.println("<script>");
 			    script.println("alert('존재하지 않는 아이디입니다')");
 			    script.println("history.back()");
 			    script.println("</script>");
 		    }else if(result == -2){
-
 		    	script.println("<script>");
 		    	script.println("alert('데이터베이스 오류입니다')");
 		    	script.println("history.back()");
