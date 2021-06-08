@@ -15,13 +15,27 @@
     </head>
     <body>
         <%
-            
-            UserDAO userDAO = new UserDAO();
-            String userID = user.getUserID();
-            String userPW = user.getUserPassword();
-            int result = userDAO.login(userID, userPW);
             PrintWriter script = response.getWriter();
+            String userID = null;
+            if(session.getAttribute("id") != null) {
+                userID = (String)session.getAttribute("id");
+            }
+
+            if(userID != null) {
+                script.println("<script>");
+                script.println("alert('이미 로그인되어 있습니다.')");
+                script.println("location.href='main.jsp'");
+                script.println("</script>");            
+            }
+
+            UserDAO userDAO = new UserDAO();
+            
+            userID = user.getUserID();
+            String userPW = user.getUserPassword();
+            int result = userDAO.login_h(userID, userPW);
+            
             if(result == 1) {
+                session.setAttribute("id", user.getUserID());
                 script.println("<script>");
                 script.println("alert('로그인 성공')");
                 session.setAttribute("id", userID);

@@ -23,9 +23,24 @@
 </head>
 <body>
 
-    <% if(user.getUserID() == null || user.getUserPassword() == null || user.getUserName() == null ||
-        user.getUserGender() == null || user.getUserEmail() == null) {
-            PrintWriter script = response.getWriter();
+    <% 
+        PrintWriter script = response.getWriter();
+        String userID = null;
+        if(session.getAttribute("id") != null) {
+            userID = (String)session.getAttribute("id");
+        }
+
+        if(userID != null) {
+            script.println("<script>");
+            script.println("alert('이미 로그인 되어 있습니다.");
+            script.println("location.href='main.jsp'");
+            script.println("</script>");
+        }
+    
+        if(user.getUserID() == null || user.getUserPassword() == null || user.getUserName() == null ||
+            user.getUserGender() == null || user.getUserEmail() == null) {
+            
+            
             script.println("<script>");
             script.println("alert('입력 안 된 사항이 있습니다.')");
             script.println("history.back()");
@@ -33,7 +48,6 @@
         } else {
             UserDAO userDAO = new UserDAO();
             int result = userDAO.join(user);
-            PrintWriter script = response.getWriter();
             if(result == -1) {
                 
                 script.println("<script>");
