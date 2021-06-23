@@ -32,7 +32,7 @@
             
             userID = user.getUserID();
             String userPW = user.getUserPassword();
-            int result = userDAO.login_h(userID, userPW);
+            int result = userDAO.login(userID, userPW);
             
             if(result == 1) {
                 session.setAttribute("id", user.getUserID());

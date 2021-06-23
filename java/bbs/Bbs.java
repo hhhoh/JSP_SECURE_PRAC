@@ -1,10 +1,12 @@
 package bbs;
 
+import java.sql.Date;
+
 public class Bbs {
     private int bbsID;
     private String bbsTitle;
     private String userID;
-    private String bbsDate;
+    private Date bbsDate;
     private String bbsContent;
     private int bbsAvailable;
 
@@ -32,11 +34,11 @@ public class Bbs {
 		this.userID = userID;
 	}
 
-	public String getBbsDate() {
+	public Date getBbsDate() {
 		return this.bbsDate;
 	}
 
-	public void setBbsDate(String bbsDate) {
+	public void setBbsDate(Date bbsDate) {
 		this.bbsDate = bbsDate;
 	}
 
