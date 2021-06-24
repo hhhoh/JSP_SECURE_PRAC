@@ -28,9 +28,8 @@
     script.println(userID);
 
     if(request.getParameter("pageNumber") != null) {
-    	script.println(Integer.parseInt(request.getParameter("pageNUmber")));
-//    	pageNumber = Ingeter.parseInt(request.getParameter("pageNumber")).intValue();
-		pageNumber = 1;
+    	script.println(Integer.parseInt(request.getParameter("pageNumber")));
+    	pageNumber = Integer.parseInt(request.getParameter("pageNumber"));
 	}
     %>
     <nav class="navbar navbar-default"> <!-- 네비게이션 -->
@@ -64,18 +63,6 @@
 					<ul class="dropdown-menu">
 						<li class="active"><a href="login.jsp">로그인</a></li>
 						<li><a href="join.jsp">회원가입</a></li>
-					</ul>
-				</li>
-			</ul>
-            <ul class="nav navbar-nav navbar-right">
-				<li class="dropdown">
-					<a href="#" class="dropdown-toggle"
-						data-toggle="dropdown" role="button" aria-haspopup="true"
-						aria-expanded="false">접속하기<span class="caret"></span></a>
-					<!-- 드랍다운 아이템 영역 -->	
-					<ul class="dropdown-menu">
-						<li class="active"><a href="login.jsp">회원 정보 수정</a></li>
-						<li><a href="logoutAction.jsp">로그아웃</a></li>
 					</ul>
 				</li>
 			</ul>
@@ -118,12 +105,14 @@
 			<%
 				}if(bbsDAO.nextPage(pageNumber + 1)) {
 			%>
-				<a href="bbs.jsp?pageNUmber=<%=pageNumber + 1%>" class="btn btn-success btn-arraw-left">다음</a>
+				<a href="bbs.jsp?pageNumber=<%=pageNumber + 1%>" class="btn btn-success btn-arraw-left">다음</a>
 			<%
 				}
 			%>
 			<!-- 글쓰기 버튼 생성 -->
 			<a href="write.jsp" class="btn btn-primary pull-right">글쓰기</a>
+
+
 		</div>
 	</div>
 	
